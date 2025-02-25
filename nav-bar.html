@@ -13,22 +13,47 @@
 
 <body class="m-0 p-0 font-[Poppins]">
     <nav class="fixed top-0 z-50 max-w-full px-3 py-2 md:px-10 md:py-5 min-w-full">
-        <div class="min-w-full bg-[#1b0b2d] flex justify-between items-center px-10 flex-col sticky rounded-xl md:flex-row">
-            <div class="left-cont flex">
-                <div id="logo" class="py-3">
-                    <img src="src/Objects.svg">
+        <div class="min-w-full bg-[#1b0b2d] flex justify-between px-7 flex-col sticky rounded-xl md:flex-row">
+            <div class="main-nav min-w-full bg-[#1b0b2d] flex justify-between items-center">
+                <div class="left-cont flex">
+                    <div id="logo" class="flex py-3">
+                        <img src="src/Objects.svg">
+                    </div>
+                    <div class="flex text-3xl text-[#7127BA] py-4 px-5">My Portfolio</div>
                 </div>
-                <div class="text-3xl text-[#7127BA] py-4 px-6">My Portfolio</div>
+                <div class="hidden md:flex items-center">
+                    <a href="#" class="text-[#7127BA] px-4">Home</a>
+                    <a href="#" class="text-[#FFFFFF] px-4">About me</a>
+                    <a href="#" class="text-[#FFFFFF] px-4">Projects</a>
+                    <a href="#" class="text-[#FFFFFF] px-4">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="right-cont flex flex-col gap-3 text-center md:ml-auto md:flex-row md:gap-5 md:h-100 overflow-y-hidden md:overflow-y-visible">
-                <a href="#" class="text-[#7127BA] px-6">Home</a>
-                <a href="#" class="text-[#FFFFFF] px-6">About me</a>
-                <a href="#" class="text-[#FFFFFF] px-6">Projects</a>
-                <a href="#" class="text-[#FFFFFF] px-6">Contact</a>
-            </div>
+            <div class="mobile-menu py-3 flex flex-col md:hidden hidden">
+                <a href="#" class="text-[#7127BA] px-3 py-3">Home</a>
+                <a href="#" class="text-[#FFFFFF] px-3 py-3">About me</a>
+                <a href="#" class="text-[#FFFFFF] px-3 py-3">Projects</a>
+                <a href="#" class="text-[#FFFFFF] px-3 py-3">Contact</a>
             </div>
         </div>
     </nav>
+    <script>
+        // grab everything we need
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+            
+            // add event listeners
+            btn.addEventListener("click", () => {
+              menu.classList.toggle("hidden");
+            });
+    </script>
+
 </body>
 
 </html>
